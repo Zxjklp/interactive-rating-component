@@ -1,74 +1,10 @@
 /* Import Overpass font with required weights */
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 
-/* 1. Use a more-intuitive box-sizing model */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* 2. Remove default margin */
 * {
+  box-sizing: border-box;
   margin: 0;
-}
-
-body {
-  /* 3. Add accessible line-height */
-  line-height: 1.5;
-  /* 4. Improve text rendering */
-  -webkit-font-smoothing: antialiased;
-}
-
-/* 5. Improve media defaults */
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-/* 6. Inherit fonts for form controls */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* 7. Avoid text overflows */
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-/* 8. Improve line wrapping */
-p {
-  text-wrap: pretty;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-wrap: balance;
-}
-
-/*
-  9. Create a root stacking context
-*/
-#root,
-#__next {
-  isolation: isolate;
+  padding: 0;
 }
 
 /* Variables based on style guide */
@@ -95,14 +31,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 0.9375rem;
   padding: 1.5rem;
 }
 
 .container {
   width: 100%;
   max-width: 375px;
-  /* Mobile default */
   margin: 0 auto;
 }
 
@@ -159,13 +94,13 @@ p,
 }
 
 .rating-component__button:hover {
-  background-color: var(--grey-500);
-  color: var(--white);
+  background-color: var(--orange-500);
+  color: var(--grey-950);
 }
 
 .rating-component__button--active {
-  background-color: var(--orange-500);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--grey-950);
 }
 
 .rating-component__submit {
@@ -174,7 +109,7 @@ p,
   border: none;
   border-radius: 30px;
   background-color: var(--orange-500);
-  color: var(--white);
+  color: var(--grey-950);
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
@@ -184,23 +119,34 @@ p,
 
 .rating-component__submit:hover {
   background-color: var(--white);
-  color: var(--orange-500);
+  color: var(--grey-950);
 }
 
 .thank-you {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .thank-you__image {
-  margin: 10px auto 20px;
+  margin: 10px auto 30px;
+  display: block;
+  max-width: 50%;
 }
 
 .thank-you__selection {
   color: var(--orange-500);
   background-color: var(--grey-700);
-  padding: 8px 15px;
+  line-height: initial;
+  padding: 8px 25px;
   border-radius: 25px;
   display: inline-block;
+  margin: 0 auto 15px;
+}
+
+.thank-you__text {
+  max-width: 92%;
 }
 
 .hidden {
@@ -208,7 +154,7 @@ p,
 }
 
 /* Media Queries based on style guide */
-@media screen and (min-width: 376px) {
+@media (min-width: 376px) {
   .container {
     max-width: 400px;
     /* Intermediate size */
@@ -219,7 +165,7 @@ p,
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media (min-width: 1440px) {
   .container {
     max-width: 450px;
     /* Larger size for desktop */
@@ -230,8 +176,7 @@ p,
   }
 }
 
-/* Ensure content is responsive across the full range of screen sizes */
-@media screen and (max-width: 320px) {
+@media (max-width: 320px) {
   .rating-component__buttons {
     flex-wrap: wrap;
     gap: 0.5rem;
