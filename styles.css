@@ -1,0 +1,245 @@
+/* Import Overpass font with required weights */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Variables based on style guide */
+:root {
+  /* Primary */
+  --orange-500: hsl(25, 97%, 53%);
+
+  /* Neutral */
+  --white: hsl(0, 100%, 100%);
+  --grey-500: hsl(217, 12%, 63%);
+  --grey-900: hsl(213, 19%, 18%);
+  --grey-950: hsl(216, 12%, 8%);
+
+  /* Derived colors for components */
+  --grey-700: hsla(216, 12%, 54%, 0.1);
+  /* For button backgrounds */
+}
+
+body {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  background-color: var(--grey-950);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  padding: 1.5rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 375px;
+  /* Mobile default */
+  margin: 0 auto;
+}
+
+.card {
+  background: linear-gradient(to bottom, var(--grey-900), hsl(215, 27%, 12%));
+  border-radius: 30px;
+  padding: 1.5rem;
+}
+
+h1,
+h2,
+.rating-component__title,
+.thank-you__title {
+  color: var(--white);
+  margin: 20px 0 15px;
+  font-weight: 700;
+}
+
+p,
+.rating-component__text,
+.thank-you__text {
+  color: var(--grey-500);
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.rating-component__icon-wrapper {
+  background-color: var(--grey-700);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating-component__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.rating-component__button {
+  background-color: var(--grey-700);
+  border: none;
+  color: var(--grey-500);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-weight: 700;
+}
+
+.rating-component__button:hover {
+  background-color: var(--grey-500);
+  color: var(--white);
+}
+
+.rating-component__button--active {
+  background-color: var(--orange-500);
+  color: var(--white);
+}
+
+.rating-component__submit {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--orange-500);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.rating-component__submit:hover {
+  background-color: var(--white);
+  color: var(--orange-500);
+}
+
+.thank-you {
+  text-align: center;
+}
+
+.thank-you__image {
+  margin: 10px auto 20px;
+}
+
+.thank-you__selection {
+  color: var(--orange-500);
+  background-color: var(--grey-700);
+  padding: 8px 15px;
+  border-radius: 25px;
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Media Queries based on style guide */
+@media screen and (min-width: 376px) {
+  .container {
+    max-width: 400px;
+    /* Intermediate size */
+  }
+
+  .card {
+    padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 450px;
+    /* Larger size for desktop */
+  }
+
+  .card {
+    padding: 2.5rem;
+  }
+}
+
+/* Ensure content is responsive across the full range of screen sizes */
+@media screen and (max-width: 320px) {
+  .rating-component__buttons {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .rating-component__button {
+    width: 45px;
+    height: 45px;
+  }
+}
